@@ -15,6 +15,7 @@ myArray[1] = 3
 myArray[2] = 1990
 console.log(myArray); 
 var month = myArray[1];
+// função "if"
 if (month < 10) {
     month = "0" + month
     console.log("verdadeiro");
@@ -22,10 +23,34 @@ if (month < 10) {
     console.log("falso");
 }
 
-
-
 var myDay = "my birth is " + myArray[0] + "-" + month + "-" + myArray[2];
 console.log(myDay);
+
+//Manipulate Arrays with Push()  
+
+var ourArray2 = ["Roman", "K", "Prog"];
+ourArray2.push(["day","by","day"]);
+console.log(ourArray2);
+
+// with pop() remove last element
+var myArray4 = [2,4,6,3];
+var removedFromMyArray4 = myArray4.pop();
+console.log(myArray4);
+
+//with shift() remove first
+myArray5 = [["A",0],2,4,6];
+var removedFromMyArray5 = myArray5.shift();
+console.log(myArray5);
+
+//shift() to add
+myArray5.unshift("2 by 2");
+console.log(myArray5);
+
+//Shopping List (exaple how to use arrays)
+
+var myList = [["milk", 6], ["chiken", 1], ["fanta", 3], ["lemon", 4], ["banana", 7]];
+
+console.log(myList);
 
 
 
