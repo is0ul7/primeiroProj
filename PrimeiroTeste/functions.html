@@ -1,0 +1,127 @@
+<body> <script>
+//Funcion
+function myReusableFunction() {
+console.log("My 1st reusable function!");   
+}
+
+myReusableFunction();
+myReusableFunction();
+
+function reusableFunction() {
+    console.log("Hey, we did it again!");
+}
+
+reusableFunction();
+reusableFunction();
+reusableFunction();
+
+//Functions with arguments
+function functionWithArg(bmw, honda) {
+    console.log(bmw - honda);
+}
+
+functionWithArg(3157, 1020);
+
+//Global Scope and functions
+
+//declare variable
+var myGlobal = 10;
+
+function funct1() { 
+    //no "var" thisGlobal is scoped to this function
+    //automaticly
+    thisGlobal = 21;
+}
+
+function funct2() {
+    var output = "";
+    if (typeof myGlobal != "undefined") {
+        output += "myGlobal is " + myGlobal;
+    }
+if (typeof thisGlobal != "undefined") {
+    output += " but this Global could be " + thisGlobal
+}
+console.log(output);
+}
+funct1();
+funct2();
+
+
+//Local Scope
+ function myLocalScope() {
+     var myVar = 15;
+     console.log(myVar);
+ }
+myLocalScope();
+
+// console.log(myVar);  we can´t access myVar outside the function
+
+
+//Global vs Local
+//scope in function
+
+var carColor = "Orange"; //globar VAR cause declared
+// outside function!
+function myCarColor() {
+    var carColor = "white" 
+    //local variable overtake Global
+//local var inside function
+    return carColor;
+}
+
+console.log(myCarColor());
+console.log(carColor); //global still there
+
+//Return a value from a function with Return
+
+function divideFive(num) {
+    return num / 5;
+    
+}
+console.log(divideFive(19));
+
+var sum = 0;
+function addNine() {
+    sum += 9;  
+}
+console.log(addNine(sum));
+
+
+// Assingnment with a Returned Value
+
+var changed = 0;
+
+function change(num){
+    return (num + 5) / 3;
+}
+changed = change(10); // 0 -> 10 / 10+5/3=5 //
+
+console.log(changed);
+
+
+// IF STATMENT
+
+function trueOrFalse(wasThatTrue) {
+    if (wasThatTrue) {
+        return "Yes, that was Day";
+    }
+return "No, that was Night";
+
+}
+console.log(trueOrFalse(false));
+
+
+function checkEqual(val) {
+    if (val == 19) {  // == para nao definir "val", mas para testar!
+    return "Equal";
+}
+return "Different";
+}
+console.log(checkEqual(15));
+
+
+
+
+
+</script> </body>
+
