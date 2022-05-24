@@ -2,5 +2,59 @@
 var ourArray = ["roman",  [ 23 ], "oisasd"];
 var sum = 8 + 19;
 console.log(sum);
+
+// 23/05
+//string wiht single quote ' ...  '
+
+var myStr = ' "http://www.teste1234.com" ';
+console.log(myStr);
+
+var ourStr = "vamos começar..." + " termina quando acabar."
+console.log(ourStr);
+
+var ourStr2 = "principio do texto"
+ourStr2 += " acaba por aqui"
+console.log(ourStr2);
+
+// String with VARIABLE!
+
+var ourName = "R: Learning java script"
+var ourStr3 = "what are you doing? " + ourName + ", how long?";
+console.log(ourStr3);
+
+//finding lenght
+var FirstCountLength = 0;
+var FirstCount = "Danielly";
+FirstCountLength = FirstCount.length;
+console.log(FirstCountLength);
+
+//Bracket Notation
+
+var FirstLetterWord = "";
+var Word = "Danielly";
+FirstLetterWord = Word[7];
+console.log(FirstLetterWord);
+
+var TestStr = "Danoelly";
+TestStr = "Danielly"; //fixing mistake
+console.log(TestStr);
+
+//Find lastest letters when down know how many letters
+var lastLetter = "connection lost";
+var lastWordLetter = lastLetter[lastLetter.length - 4];
+console.log(lastWordLetter);
+//
+
+function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
+    
+    var result = "";
+result += "The " + myAdjective + " " + myNoun + " " + myAdverb + " on " + myAdverb;
+
+return result;
+} 
+
+console.log(wordBlanks("car", "black", "stopped", "park"));
+
+
 </script>
 </body>
