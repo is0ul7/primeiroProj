@@ -1,0 +1,136 @@
+<body>
+<script>
+// === avalia o tipo e compara/ == compara(converte o tipo do crater)
+
+//inEqual OPERATOR
+
+function testNotEqual(val) {
+    if (val != 75) {  // strict inEqual !==
+    return "Not Equal";
+    }
+    return "Equal";
+}
+console.log(testNotEqual(55));
+
+//GraterThan OPERATOR / LessThan
+function GreaterThan(val) {
+
+    if (val >= 100) {
+return "Over 100";
+    }
+
+    if (val >= 21) {
+return "20 or Over";
+    }
+    if (val <= 20) {
+        return "20 or Under"
+    } 
+}
+
+console.log(GreaterThan(20));
+
+// LogicalAnd
+//intro
+function testLogicalAnd(val) {
+if (val <= 99) {
+    if (val >= 19) {
+        return "WE DID IT";
+    }
+}
+return "Nope";
+}
+console.log(testLogicalAnd(22));
+
+//application (&& means AND)
+function testLogicalAnd (val) {
+if (val <= 99 && val >= 19) {
+    return "WE DID IT";
+}
+return "Nope";
+}
+console.log(testLogicalAnd(22));
+
+// logicalOr OPERATOR      ( || means OR )
+function logicalOr(val) {
+    if (val <10 || val >20) {
+        return "Outside"
+    }
+    return "inside"
+}
+console.log(logicalOr(21));
+
+// ELSE STATEMENTS
+// Atention "Return" is different than "= Result"
+function testElse(val) {
+    var result = "";
+    if (val > 5) {
+        result = "Bigger than 5";
+    } else {
+result = "5 or Smaller";
+    }
+    return result;
+}
+console.log(testElse(4.9));
+
+//Else If Statement
+
+function myElseIf(val) {
+    if (val > 20) {
+    return "Greater than 20";
+    } else if (val < 10) {
+    return "Smaller than 10";
+    } else {
+    return "Between 10 - 20";
+    }
+}
+
+console.log(myElseIf(81));
+
+//Order is Very IMPORTANT EX: 5 10 not 10 5
+function orderLogic (val) {
+    if (val < 50) {
+    return "less than 50";
+    } else if (val < 100) {
+    return "less than 100";
+    } else {
+    return "Greater than or equal to 100"
+    }
+}
+console.log(orderLogic(55));
+
+//Chaining 
+// IF ELSE Statements
+
+function fragCount(num) {
+    if (num < 2) {
+        return "kill";
+    } else if (num < 3) {
+        return "Doble Kill";
+    } else if (num < 4) {
+        return "Triple Kill";
+    } else if (num < 5) {
+        return "Quad Kill";
+    } else if (num < 6) {
+        return "ACE";
+    } else {
+        return "Undefined";
+    }
+}
+
+console.log(fragCount(4));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
