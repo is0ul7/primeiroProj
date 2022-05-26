@@ -1,123 +1,212 @@
 <body>
-<script>
-// === avalia o tipo e compara/ == compara(converte o tipo do crater)
+  <script>
+    // === avalia o tipo e compara/ == compara(converte o tipo do crater)
 
-//inEqual OPERATOR
+    //inEqual OPERATOR
 
-function testNotEqual(val) {
-    if (val != 75) {  // strict inEqual !==
-    return "Not Equal";
+    function testNotEqual(val) {
+      if (val != 75) {
+        // strict inEqual !==
+        return "Not Equal";
+      }
+      return "Equal";
     }
-    return "Equal";
-}
-console.log(testNotEqual(55));
+    console.log(testNotEqual(55));
 
-//GraterThan OPERATOR / LessThan
-function GreaterThan(val) {
+    //GraterThan OPERATOR / LessThan
+    function GreaterThan(val) {
+      if (val >= 100) {
+        return "Over 100";
+      }
 
-    if (val >= 100) {
-return "Over 100";
+      if (val >= 21) {
+        return "20 or Over";
+      }
+      if (val <= 20) {
+        return "20 or Under";
+      }
     }
 
-    if (val >= 21) {
-return "20 or Over";
+    console.log(GreaterThan(20));
+
+    // LogicalAnd
+    //intro
+    function testLogicalAnd(val) {
+      if (val <= 99) {
+        if (val >= 19) {
+          return "WE DID IT";
+        }
+      }
+      return "Nope";
     }
-    if (val <= 20) {
-        return "20 or Under"
-    } 
-}
+    console.log(testLogicalAnd(22));
 
-console.log(GreaterThan(20));
-
-// LogicalAnd
-//intro
-function testLogicalAnd(val) {
-if (val <= 99) {
-    if (val >= 19) {
+    //application (&& means AND)
+    function testLogicalAnd(val) {
+      if (val <= 99 && val >= 19) {
         return "WE DID IT";
+      }
+      return "Nope";
     }
-}
-return "Nope";
-}
-console.log(testLogicalAnd(22));
+    console.log(testLogicalAnd(22));
 
-//application (&& means AND)
-function testLogicalAnd (val) {
-if (val <= 99 && val >= 19) {
-    return "WE DID IT";
-}
-return "Nope";
-}
-console.log(testLogicalAnd(22));
-
-// logicalOr OPERATOR      ( || means OR )
-function logicalOr(val) {
-    if (val <10 || val >20) {
-        return "Outside"
+    // logicalOr OPERATOR      ( || means OR )
+    function logicalOr(val) {
+      if (val < 10 || val > 20) {
+        return "Outside";
+      }
+      return "inside";
     }
-    return "inside"
-}
-console.log(logicalOr(21));
+    console.log(logicalOr(21));
 
-// ELSE STATEMENTS
-// Atention "Return" is different than "= Result"
-function testElse(val) {
-    var result = "";
-    if (val > 5) {
+    // ELSE STATEMENTS
+    // Atention "Return" is different than "= Result"
+    function testElse(val) {
+      var result = "";
+      if (val > 5) {
         result = "Bigger than 5";
-    } else {
-result = "5 or Smaller";
+      } else {
+        result = "5 or Smaller";
+      }
+      return result;
     }
-    return result;
-}
-console.log(testElse(4.9));
+    console.log(testElse(4.9));
 
-//Else If Statement
+    //Else If Statement
 
-function myElseIf(val) {
-    if (val > 20) {
-    return "Greater than 20";
-    } else if (val < 10) {
-    return "Smaller than 10";
-    } else {
-    return "Between 10 - 20";
+    function myElseIf(val) {
+      if (val > 20) {
+        return "Greater than 20";
+      } else if (val < 10) {
+        return "Smaller than 10";
+      } else {
+        return "Between 10 - 20";
+      }
     }
-}
 
-console.log(myElseIf(81));
+    console.log(myElseIf(81));
 
-//Order is Very IMPORTANT EX: 5 10 not 10 5
-function orderLogic (val) {
-    if (val < 50) {
-    return "less than 50";
-    } else if (val < 100) {
-    return "less than 100";
-    } else {
-    return "Greater than or equal to 100"
+    //Order is Very IMPORTANT EX: 5 10 not 10 5
+    function orderLogic(val) {
+      if (val < 50) {
+        return "less than 50";
+      } else if (val < 100) {
+        return "less than 100";
+      } else {
+        return "Greater than or equal to 100";
+      }
     }
-}
-console.log(orderLogic(55));
+    console.log(orderLogic(55));
 
-//Chaining 
-// IF ELSE Statements
+    //Chaining
+    // IF ELSE Statements
 
-function fragCount(num) {
-    if (num < 2) {
+    function fragCount(num) {
+      if (num == 1) {
         return "kill";
-    } else if (num < 3) {
+      } else if (num == 2) {
         return "Doble Kill";
-    } else if (num < 4) {
+      } else if (num == 3) {
         return "Triple Kill";
-    } else if (num < 5) {
+      } else if (num == 4) {
         return "Quad Kill";
-    } else if (num < 6) {
+      } else if (num  == 5) {
         return "ACE";
-    } else {
-        return "Undefined";
+      } else {
+        return num + " kills";
+      }
     }
-}
 
-console.log(fragCount(4));
+// val (numOfkills)
+//  function kill some one
+    console.log(fragCount(6));
+
+    //Switch Statement
+
+    function caseInSwitch(val) {
+      var answer = "";
+      switch (val) {
+        case 1:
+          answer = "first one";
+          break;
+        case 2:
+          answer = "second one";
+          break;
+        case 3:
+          answer = "third one";
+          break;
+        case 4:
+          answer = "last one";
+          break;
+        default:
+          answer = "stuff";
+          break;
+      }
+      return answer;
+    }
+
+    console.log(caseInSwitch("a"));
+
+    // Sequential + if
+    function cardSequence(card) {
+      let answer = "";
+      if (Number.isInteger(card) == false) {
+        card = converStringToNumber(card);
+      }
+
+      switch (card) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+          answer = "low";
+
+          break;
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+          answer = "mid";
+          break;
+
+        case 10:
+        case 11:
+        case 12:
+        case 13:
+          answer = "high";
+          break;
+
+        default:
+          answer = "Try again";
+          return [0, answer];
+          break;
+      }
+      return [card, answer];
+    }
+
+    function converStringToNumber(card) {
+    //Exemplo  
+//  switch (card) {
+//     case "A":
+//       return 1;
+//   }
+      
+        if (card == "A") {
+        return 1;
+      }
+      if (card == "V") {
+        return 11;
+      }
+      if (card == "Q") {
+        return 12;
+      }
+      if (card == "K") {
+        return 13;
+      }
+    }
+    console.log(cardSequence("K"));
+    console.log(cardSequence(88));
 
 
 
@@ -131,6 +220,9 @@ console.log(fragCount(4));
 
 
 
+    
 
-</script>
+
+
+  </script>
 </body>
