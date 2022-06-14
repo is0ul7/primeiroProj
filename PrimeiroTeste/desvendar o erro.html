@@ -1,0 +1,49 @@
+<body>
+    <script>
+
+
+var killMiss = Math.floor(Math.random());
+        function killFunction() {
+      return Math.floor(Math.random() * 2);
+    }
+        function createButton()
+    {
+         var btn = document.createElement('BUTTON');
+         var label = document.createTextNode("Shoot");
+         btn.appendChild(label);
+         btn.onclick = function (){ 
+      console.log(killFunction());
+     }
+         document.body.appendChild(btn);
+    }
+    createButton()
+
+
+    // exemplo do pika para ajudar achar o erro
+    function killFunction(){
+   return true
+}
+
+var v1 = console.log(killFunction())
+var v2 = killFunction()
+var v3 = killFunction
+
+var o1 =  { onclick: console.log(killFunction()) } 
+var o2 = { onclick:  killFunction() } 
+var o3 = { onclick: killFunction }
+
+if(v1 === o1.onclick ){
+  console.log('v1 e o1 sao iguais')
+}
+
+if(v2 === o2.onclick ){
+  console.log('v2 e o2 sao iguais')
+}
+
+if(v3 === o3.onclick ){
+  console.log('v3 e o3 sao iguais')
+}
+
+
+    </script>    
+</body>

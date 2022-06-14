@@ -1,0 +1,182 @@
+<html>
+  <body>
+    <ul>
+      <li>
+        <button id="reset-btn">Reset</button>
+      </li>
+      <li>
+        <span>
+          <input id="new-player-input" />
+          <button id="new-player-btn">Add New Player</button>
+        </span>
+      </li>
+      <li>
+        <span>Current Players: <span id="player-list"></span></span>
+      </li>
+      <li>
+        <button id="addkill-Btn">Kill some one</button>
+        <div>
+          <p>Result:</p>
+          <p id="result"></p>
+        </div>
+      </li>
+    </ul>
+
+    <script>
+      // Don't look much at this script, mainly to setup things
+      // I can explain it if you need to
+      var newPlayerBtn = document.getElementById("new-player-btn");
+      var resetBtn = document.getElementById("reset-btn");
+      var newPlayerInput = document.getElementById("new-player-input");
+      var playerListSpan = document.getElementById("player-list");
+      var resultSpan = document.getElementById("result");
+
+      resetBtn.onclick = () => restartRound();
+
+      newPlayerBtn.onclick = () => {
+        const playerName = newPlayerInput.value;
+
+        // reset input value
+
+        newPlayerInput.value = "";
+        // if the playerName is empty do not add
+        if (!playerName) return;
+        addPlayerToList(playerName);
+      };
+
+      // add player to the playerList
+      function addPlayerToList(playerName) {
+        playerList.push(playerName);
+        playerListSpan.textContent = playerList.join(", ");
+      }
+
+      function updateKills() {
+        resultSpan.innerHTML = kills.join("<br/>");
+      }
+
+      var playerList = [];
+      var kills = [];
+    </script>
+
+    <script>
+      // posso alterar codigo daqui p/baixo
+      function restartRound() {
+        // add code to restart round
+      }
+
+      function killPlayer(playerName, killedPlayerName) {
+        // add code to kill player
+
+        // example
+        kills.push([playerName, killedPlayerName]);
+
+        // call update Kill
+        updateKills();
+      }
+    </script>
+
+    <script>
+      // Please write your code here
+      // you can delete all the code in this <script>
+      // Please write code with for a new Round here
+      /*  
+      var fragCount = 0;
+      count ++ || --
+
+      criar friendly fire decremet score
+      var playerData =
+        1 = "BOT Easy";
+        2 = "BOT Normal";
+        3 = "BOT HARD";
+        4 = "BOT Expert";
+        5 = "S0UL^^";
+      
+var playerNumeber = 1
+var player = playerData[playerNumber];
+*/
+
+      var addkill = document.getElementById("addkill-Btn");
+
+      function createButton() {
+        var btn = document.createElement("BUTTON");
+        var label = document.createTextNode("Shoot");
+        btn.appendChild(label);
+        btn.onclick = function () {
+          var changeScoreResult = ChangeScore();
+          if (changeScoreResult == "Try AGAIN") {
+            console.log("falhou");
+          } else {
+            // console.log(changeScoreResult);
+            var killsCountResult = killsCount(changeScoreResult);
+            console.log(killsCountResult);
+          }
+        };
+        document.body.appendChild(btn);
+      }
+      createButton();
+
+      var score = 0;
+
+      function killFunction() {
+        return Math.floor(Math.random() * 3);
+      }
+     
+      function ChangeScore() {
+        var fire = killFunction(); 
+        // variavel fire guarda o resultado da funçao killFunction 
+        // dessa forma chamo() a funçao uma vez   
+        if (fire == 1) {
+          return ++score; 
+          } else if (fire == 2) {
+          --score;
+          return "Friendly Fire"
+         } else {
+          return "Try AGAIN";
+        }
+      }
+
+      function killsCount(frag) {
+        if (frag < 1) return "invalid Kill count";
+        if (frag > 12) return "God Like";
+        var answer = "";
+        switch (frag) {
+          case 1:
+            return "Kill";
+          case 2:
+            return "Double Kill";
+          case 3:
+            return "Triple Kill";
+          case 4:
+            return "Quadra Kill";
+          case 5:
+            return "Penta Kill";
+          case 6:
+            return "Bloodthirsty";
+          case 7:
+            return "Super Kill";
+          case 8:
+            return "Mega Kill";
+          case 9:
+            return "Ultra kill";
+          case 10:
+            return "EXA Kill";
+          case 11:
+            return "Unstopable";
+          case 12:
+            return "Rape";
+          default:
+          return frag
+        }
+      }
+
+      // add new player
+      addPlayerToList("Soul");
+
+      killPlayer("Soul", "NPC", "pikax");
+      killPlayer("Soul", "NPC");
+      killPlayer("Soul", "NPC");
+
+      console.log("players", playerList);
+    </script>
+  </body>
+</html>

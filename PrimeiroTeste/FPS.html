@@ -1,38 +1,48 @@
 <body>
-<script>
+  <button onclick="console.log(killFunction())">SHOOT</button>
+  <script>
     ///Exercicio para desenvolver
-function fragCount(num) {
-      if (num == 1) {
-        return "kill";
-      } else if (num == 2) {
-        return "Doble Kill";
-      } else if (num == 3) {
-        return "Triple Kill";
-      } else if (num == 4) {
-        return "Quad Kill";
-      } else if (num  == 5) {
-        return "ACE";
-      } else {
-        return num + " kills";
+
+    var killMiss = Math.floor(Math.random());
+    function killFunction() {
+      return Math.floor(Math.random() * 2);
+    }
+
+    function killsCount(frag) {
+      if (frag < 1) return "invalid Kill count";
+      if (frag > 12) return "God Like";
+      var answer = "";
+      switch (frag) {
+        case 1:
+          return "Kill";
+        case 2:
+          return "Double Kill";
+        case 3:
+          return "Triple Kill";
+        case 4:
+          return "Quadra Kill";
+        case 5:
+          return "Penta Kill";
+        case 6:
+          return "Bloodthirsty";
+        case 7:
+          return "Super Kill";
+        case 8:
+          return "Mega Kill";
+        case 9:
+          return "Ultra kill";
+        case 10:
+          return "EXA Kill";
+        case 11:
+          return "Unstopable";
+        case 12:
+          return "Rape";
       }
     }
 
-
-    console.log(fragCount(6));
-
+    console.log(killsCount(5));
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
+    
+  </script>
 </body>

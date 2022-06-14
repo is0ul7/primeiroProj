@@ -1,0 +1,70 @@
+<body>
+    <script>
+      function createButton() {
+        var btn = document.createElement("BUTTON");
+        var label = document.createTextNode("Shoot");
+        btn.appendChild(label);
+        btn.onclick = function () {
+          var changeScoreResult = ChangeScore();
+          if (changeScoreResult == "Try AGAIN") {
+            console.log("falhou");
+          } else {
+           // console.log(changeScoreResult);
+            var killsCountResult = killsCount(changeScoreResult);
+            console.log(killsCountResult);
+          }
+        };
+        document.body.appendChild(btn);
+      }
+      createButton();
+  
+      var score = 0;
+  
+      function killFunction() {
+        return Math.floor(Math.random() * 2);
+      }
+      var killFunctionResult = killFunction();
+      console.log(killFunctionResult);
+  
+      function ChangeScore() {
+        if (killFunction() > 0) {
+          return ++score;
+        } else {
+          return "Try AGAIN";
+        }
+      }
+  
+      function killsCount(frag) {
+        if (frag < 1) return "invalid Kill count";
+        if (frag > 12) return "God Like";
+        var answer = "";
+        switch (frag) {
+          case 1:
+            return "Kill";
+          case 2:
+            return "Double Kill";
+          case 3:
+            return "Triple Kill";
+          case 4:
+            return "Quadra Kill";
+          case 5:
+            return "Penta Kill";
+          case 6:
+            return "Bloodthirsty";
+          case 7:
+            return "Super Kill";
+          case 8:
+            return "Mega Kill";
+          case 9:
+            return "Ultra kill";
+          case 10:
+            return "EXA Kill";
+          case 11:
+            return "Unstopable";
+          case 12:
+            return "Rape";
+        }
+      }
+    </script>
+  </body>
+  
