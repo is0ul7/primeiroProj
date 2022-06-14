@@ -1,0 +1,68 @@
+<body>
+  <script>
+    // https://stackoverflow.com/questions/32458427/multiple-menus-with-node-js
+
+    //LOOPS
+    var myForLoop = ""; /* if myForLoop assing as 0 (0 will be a 
+    integer and it will return 45 sum of all numbers) */
+    for (i = 0; i < 10; i++) {
+        myForLoop += i;
+    } // return 0123456789
+
+
+// create an array and run loops 
+
+var carsModels = ['GTR','Civic','e46','Mustang','3008', 'silvia s14','508','Punto','rx7'];
+myForLoop = "";
+for (i=0; i<carsModels.length; i++) {
+    myForLoop += carsModels[i] + " "; 
+}
+// array length = 9;
+
+var myDog = ['Zeus','Black and White','Age of 2','ball lover','like a kid','eat and sleep'];
+i = 0; // set outside of loop
+myWhileLoop = '';
+while (myDog[i]){
+    myWhileLoop += "UPS " + myDog[i] + " WOW "; // we can add string for exemple
+    i++;
+}
+
+var someWords = ["player","gamer",'Chose','his nickname','or set his','name'];
+myDoWhileLoop = '';
+i=0;
+do {
+    myDoWhileLoop += someWords[i] + ' u can put some thing here ';
+    i++;
+}while(someWords[i])
+
+// FUNCTIONS
+
+function /*name->*/multiply(/*parameters-> can be (a,b)or->*/two,five){  
+return two*five;
+}
+var answer = multiply(2,5);
+
+
+
+var lastName = 'K...'; // global variable, is outside of function scope.  
+
+function whoAreYou(){
+    var name = 'Roman'; /*local socpe variable*/
+alert(name + ' ' + lastName);
+}
+/*var thisVarStoringFunction = whoAreYou(); /*pikas recomendation
+using var to store information*/
+
+
+//function with default parameters
+function summ(bmw=30000,gtr=110000){ /*there are defined default parameters */
+    return (bmw+gtr); /* total = 140000*/
+}
+var total = summ(1500,55000); /*if we set new parameters, they will have a priority over default*/
+/* total = 56500 */
+
+
+</script>
+
+
+</body>
