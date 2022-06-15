@@ -1,0 +1,78 @@
+<body>
+  <script>
+    /*
+// 1) Keyword new
+var Book = new Object();
+Book.property = 'title','price','release year';
+Book.method = function() { };
+
+// 2)  Object literals
+var Book2 = 
+{
+property: [1];
+method: function () { }
+}
+
+// 3) Function
+function Book3() //constructor
+{
+    this.property = "value";
+    this.method = function () { }; // internal function
+    this.method = method; //external function 
+}
+Book3.prototype.method() { } //prototype function
+var Book3 = new Book3(); // object blueprint
+
+// 4) Singleton
+var Book4 = new function() 
+{
+this.property = "value";
+this.method = function() { };
+}
+*/
+
+    /////////////////////////////////////////////
+
+    // 1)
+    var myHouse = new Object();
+    myHouse.color = "White"; // property
+    myHouse.price = "14000"; // property
+    myHouse.number = "159"; // property
+    myHouse.adress = "Gondifelos"; // property
+  
+    myHouse.getInfo = function () {
+        return 'is ' + this.color + ' and it`s ' + this.price + '$';
+    }
+  
+  // 2)
+  var mySmartPhone = {
+// properties
+color: 'blue',
+model: ['p20','pro','2018'],
+price: '500',
+type: 'smartphone',
+
+  // method
+getInfo: function () {
+    return this.model + ' ' + this.type + ' €' + this.price;
+  }, // trailing or hanging comma in case of copy its prevent syntaxError.
+};
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </script>
+</body>
