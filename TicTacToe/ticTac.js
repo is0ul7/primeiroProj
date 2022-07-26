@@ -11,7 +11,8 @@ const WIN_COMBO = [
     [2, 5, 8]
 ]
 
-const cellElements = document.querySelectorAll("[data-cell");
+
+const cellElements = document.querySelectorAll("[data-cell]");
 const gameBoard = document.getElementById("gameBoard");
 const winningMssgElement = document.getElementById("winning-mssg");
 const winningMssgTextElement = document.querySelector("[data-winning-mssg-text]");
@@ -130,15 +131,13 @@ function checkWin(currentClass) {
     })
 };
 
-
-
 function score1() {
     p1score +=1;
     scoreP1.innerHTML = p1score;
 };
 function score2() {
     p2score +=1;
-    scoreP2.innerHTML = p2score;
+    scoreP2.innerHTML +=1;
 };
 function resScore1() {
     scoreP1.innerHTML = 0
