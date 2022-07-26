@@ -37,7 +37,6 @@
         const playerName = newPlayerInput.value;
 
         // reset input value
-
         newPlayerInput.value = "";
         // if the playerName is empty do not add
         if (!playerName) return;
@@ -90,10 +89,41 @@
         3 = "BOT HARD";
         4 = "BOT Expert";
         5 = "S0UL^^";
+        
       
 var playerNumeber = 1
 var player = playerData[playerNumber];
 */
+
+
+let player1Name = document.getElementById("player1Name").value;
+let player2Name = document.getElementById("player2Name").value;
+sbmButton1.onclick = () => {
+    player1List.push(player1Name)
+};
+
+sbmButton2.onclick = () => {
+    player2List.push(player2Name)
+};
+
+
+console.log(player1List, player2List);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       var addkill = document.getElementById("addkill-Btn");
 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="ticTac.js" defer></script>
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <div class="PlayerNames">
+    <div class="player1txt">Player 1 insert your NAME:</div>
+    <input type="text" id="player1Name" /><br />
+    <button type="button" id="sbmButton1">Submit</button>
+
+    <div class="player2txt">Player 2 insert your NAME:</div>
+    <input type="text" id="player2Name" /><br />
+    <button type="button" id="sbmButton2">Submit</button>
+  </div>
+    <div class="score_txt">Score:</div>
+    <div class="scoreboard" id="scoreboard">
+      <div class="player1_name"><p id="output1"></p></div>
+      <div class="scoreP1" id="scoreP1">0</div>
+      <div class="player2_name"><p id="output2"></p></div>
+      <div class="scoreP2" id="scoreP2">0</div>
+    </div>
+    <div class="gameBoard" id="gameBoard">
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+    </div>
+    <div class="winning-mssg" id="winning-mssg">
+      <div data-winning-mssg-text></div>
+      <button id="nextRound">Next Round!</button>
+      <button id="restartButton">Restart Game</button>
+    </div>
+  </body>
+</html>

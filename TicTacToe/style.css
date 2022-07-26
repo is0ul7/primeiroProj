@@ -1,0 +1,231 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --cell-size: 145px;
+  --mark-size: calc(var(--cell-size) * 0.9);
+}
+
+body {
+  margin: 0;
+  background-image: linear-gradient(25deg, rgb(231, 229, 227) 50%, rgb(86, 85, 85) 100%);
+}
+
+.gameBoard {
+  width: 100vw;
+  height: 70vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 2px solid darkblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+.cell:nth-child(3n + 1) {
+  border-left: none;
+}
+.cell:nth-child(3n + 3) {
+  border-right: none;
+}
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+  border-bottom: none;
+}
+
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
+}
+
+.cell.x::before,
+.cell.x::after,
+.cell.circle::before {
+  background-color: rgb(0, 0, 0);
+}
+
+.gameBoard.x .cell:not(.x):not(.circle):hover::before,
+.gameBoard.x .cell:not(.x):not(.circle):hover::after,
+.gameBoard.circle .cell:not(.x):not(.circle):hover::before {
+  background-color: rgb(66, 215, 3);
+}
+
+.cell.x::before,
+.cell.x::after,
+.gameBoard.x .cell:not(.x):not(.circle):hover::before,
+.gameBoard.x .cell:not(.x):not(.circle):hover::after {
+  content: "";
+  position: absolute;
+  width: calc(var(--mark-size) * 0.15);
+  height: var(--mark-size);
+}
+
+.cell.x::before,
+.gameBoard.x .cell:not(.x):not(.circle):hover::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after,
+.gameBoard.x .cell:not(.x):not(.circle):hover::after {
+  transform: rotate(-45deg);
+}
+.cell.circle::before,
+.cell.circle::after,
+.gameBoard.circle .cell:not(.x):not(.circle):hover::before,
+.gameBoard.circle .cell:not(.x):not(.circle):hover::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+
+}
+
+.cell.circle::before,
+.gameBoard.circle .cell:not(.x):not(.circle):hover::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+}
+.cell.circle::after,
+.gameBoard.circle .cell:not(.x):not(.circle):hover::after {
+  width: calc(var(--mark-size) * 0.7);
+  height: calc(var(--mark-size) * 0.7);
+  background-color: white;
+}
+
+.winning-mssg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000e6;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
+}
+
+.winning-mssg button {
+  font-size: 4rem;
+  background-color: bisque;
+  border: 2px solid black;
+  border-radius: 30%;
+  padding: 0.15em 0.2em;
+  cursor: pointer;
+}
+
+.winning-mssg button:hover {
+  background-color: blue;
+  color: aqua;
+  border-color: lightblue;
+}
+.winning-mssg.show {
+  display: flex;
+}
+
+.PlayerNames {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, auto);
+}
+
+.scoreboard {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, auto);
+  border-top: 2px solid #1854e0bf;
+  border-bottom: 2px solid #1854e0bf;
+}
+
+.score_txt {
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  font-size: 30px;
+  font-family: impact;
+}
+
+.player1txt,
+p#output1,
+.scoreP1 {
+  padding: 5px;
+  color: #c61111e6;
+}
+
+.player2txt,
+p#output2,
+.scoreP2 {
+  padding: 5px;
+  color: #243fdce6;
+}
+
+.player1txt,
+.player2txt {
+  font: 25px sans-serif;
+}
+
+p#output1,
+p#output2 {
+  font: 30px impact;
+}
+
+.scoreP1,
+.scoreP2 {
+  font: 40px impact;
+}
+
+input#player1Name,
+input#player2Name {
+  font-family: "Courier New";
+  color: white;
+  background-color: rgb(0, 0, 0);
+  padding: 3px;
+}
+
+button#sbmButton1,
+button#sbmButton2 {
+  display: flex;
+  cursor: pointer;
+  padding: 3px;
+  font-family: "Courier New";
+  border: none;
+  border-radius: 10%;
+  background-color: #f7b605e6;
+}
+
+
+button#sbmButton1:hover,
+button#sbmButton2:hover {
+    background-color: #f6ff00e6;
+}
+
+button#sbmButton1:active,
+button#sbmButton2:active {
+background-color: #2a8a01e6;
+}
+
+.winner {
+    background-color: red;
+}
