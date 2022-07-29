@@ -132,12 +132,12 @@ function checkWin(currentClass) {
 };
 
 function score1() {
-    p1score +=1;
+    p1score++;
     scoreP1.innerHTML = p1score;
 };
 function score2() {
-    p2score +=1;
-    scoreP2.innerHTML +=1;
+    p2score++;
+    scoreP2.innerHTML = p1score;
 };
 function resScore1() {
     scoreP1.innerHTML = 0
