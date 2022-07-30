@@ -9,7 +9,6 @@ const CONTROLS = [
     butn8 = document.getElementById("b8"),
     butn9 = document.getElementById("b9"),
 ];
-
 const sbmButton1 = document.getElementById("sbmButton1");
 const sbmButton2 = document.getElementById("sbmButton2");
 const scoreP1 = document.getElementById("scoreP1");
@@ -26,6 +25,7 @@ let player1Name = "";
 let player2Name = "";
 let p1score = 0;
 let p2score = 0;
+let board;
 
 nextRoundBtn.addEventListener("click", nextRound);
 restartButton.addEventListener("click", gameStart);
@@ -46,13 +46,14 @@ function gameStart() {
     checkTurn = true;
     currentPlayerName = true;
     CONTROLS.forEach(butn => {
-
         butn.addEventListener("click", toggleOnClick, { once: true })
         butn.textContent = "";
         result.innerHTML = "Result: ";
         freeSpace = 9;
         document.getElementById("output1").innerHTML = "";
         document.getElementById("output2").innerHTML = "";
+        player1Name = "";
+        player2Name = "";
         resScore(p1score = 0, p2score = 0);
     });
 };
@@ -66,7 +67,6 @@ function nextRound() {
         result.innerHTML = "Result: ";
         freeSpace = 9;
     });
-    
 };
 
 function toggleOnClick(event) {
@@ -76,74 +76,74 @@ function toggleOnClick(event) {
     butn.textContent = currentPlayer;
     checkTurn = !checkTurn;
     freeSpace--;
+    gameBoard();
+};
+
+function gameBoard() {
+    board = CONTROLS.map((element) => {
+        return element.innerHTML;
+    }); 
     checkWin();
 };
 
-function gameEnd() {
-    CONTROLS.forEach(butn => {
-        butn.removeEventListener("click", toggleOnClick);
-    });
-};
-
 function checkWin() {
-    if (butn1.innerHTML, butn4.innerHTML, butn3.innerHTML !== "" &&
-        butn1.innerHTML === butn2.innerHTML &&
-        butn1.innerHTML === butn3.innerHTML &&
-        butn2.innerHTML === butn3.innerHTML) {
-            Result();
-            gameEnd();
+    if (board[0], board[1], board[1] !== "" &&
+        board[0] === board[1] &&
+        board[0] === board[2] &&
+        board[1] === board[2]) {
+        Result();
+        gameEnd();
     } else if (
-        butn4.innerHTML, butn5.innerHTML, butn6.innerHTML !== "" &&
-        butn4.innerHTML === butn5.innerHTML &&
-        butn4.innerHTML === butn6.innerHTML &&
-        butn5.innerHTML === butn6.innerHTML) {
-            Result();
-            gameEnd();
+        board[3], board[4], board[5] !== "" &&
+        board[3] === board[4] &&
+        board[3] === board[5] &&
+        board[4] === board[5]) {
+        Result();
+        gameEnd();
     } else if (
-        butn7.innerHTML, butn8.innerHTML, butn9.innerHTML !== "" &&
-        butn7.innerHTML === butn8.innerHTML &&
-        butn7.innerHTML === butn9.innerHTML &&
-        butn8.innerHTML === butn9.innerHTML) {
-            Result();
-            gameEnd();
+        board[6], board[7], board[8] !== "" &&
+        board[6] === board[7] &&
+        board[6] === board[8] &&
+        board[7] === board[8]) {
+        Result();
+        gameEnd();
     } else if (
-        butn1.innerHTML, butn4.innerHTML, butn7.innerHTML !== "" &&
-        butn1.innerHTML === butn4.innerHTML &&
-        butn1.innerHTML === butn7.innerHTML &&
-        butn4.innerHTML === butn7.innerHTML) {
-            Result();
-            gameEnd();
+        board[0], board[3], board[6] !== "" &&
+        board[0] === board[3] &&
+        board[0] === board[6] &&
+        board[3] === board[6]) {
+        Result();
+        gameEnd();
     } else if (
-        butn2.innerHTML, butn5.innerHTML, butn8.innerHTML !== "" &&
-        butn2.innerHTML === butn5.innerHTML &&
-        butn2.innerHTML === butn8.innerHTML &&
-        butn5.innerHTML === butn8.innerHTML) {
-            Result();
-            gameEnd();
+        board[1], board[4], board[7] !== "" &&
+        board[1] === board[4] &&
+        board[1] === board[7] &&
+        board[4] === board[7]) {
+        Result();
+        gameEnd();
     } else if (
-        butn3.innerHTML, butn6.innerHTML, butn9.innerHTML !== "" &&
-        butn3.innerHTML === butn6.innerHTML &&
-        butn3.innerHTML === butn9.innerHTML &&
-        butn6.innerHTML === butn9.innerHTML) {
-            Result();
-            gameEnd();
+        board[2], board[5], board[8] !== "" &&
+        board[2] === board[5] &&
+        board[2] === board[8] &&
+        board[5] === board[8]) {
+        Result();
+        gameEnd();
     } else if (
-        butn3.innerHTML, butn5.innerHTML, butn7.innerHTML !== "" &&
-        butn3.innerHTML === butn5.innerHTML &&
-        butn3.innerHTML === butn7.innerHTML &&
-        butn5.innerHTML === butn7.innerHTML) {
-            Result();
-            gameEnd();
+        board[2], board[5], board[6] !== "" &&
+        board[2] === board[4] &&
+        board[2] === board[6] &&
+        board[4] === board[6]) {
+        Result();
+        gameEnd();
     } else if (
-        butn1.innerHTML, butn5.innerHTML, butn9.innerHTML !== "" &&
-        butn1.innerHTML === butn5.innerHTML &&
-        butn1.innerHTML === butn9.innerHTML &&
-        butn5.innerHTML === butn9.innerHTML) {
-            Result();
-            gameEnd();
+        board[0], board[4], board[8] !== "" &&
+        board[0] === board[4] &&
+        board[0] === board[8] &&
+        board[4] === board[8]) {
+        Result();
+        gameEnd();
     } else {
         itsDraw()
-        
     };
 };
 
@@ -154,18 +154,23 @@ function itsDraw() {
     };
 };
 
+function gameEnd() {
+    CONTROLS.forEach(butn => {
+        butn.removeEventListener("click", toggleOnClick);
+    });
+};
+
 function Result() {
     score()
     result.innerHTML = "Result: " + currentPlayerName + " WINS!!!";
 };
 
-
 function score() {
     if (currentPlayer === PLAYER1) {
         p1score++;
         scoreP1.innerHTML = p1score;
-    } else  
-    p2score++;
+    } else
+        p2score++;
     scoreP2.innerHTML = p2score;
 };
 
